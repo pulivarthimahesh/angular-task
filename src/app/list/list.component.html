@@ -1,0 +1,62 @@
+<div fxLayout="row" fxLayoutAlign="center start" fxFlexFill style="height:100%;overflow: auto;"
+    (scroll)="onScroll($event)">
+    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center" style="padding: 20px;">
+        <div fxLayout="column" *ngFor="let item of data" fxLayoutGap="10px" style="margin-bottom: 50px;">
+            <div fxLayout="row" fxLayoutGap="10px">
+                <div style="background-color: #D3D3D3; border-radius: 20px; height: 150px;width: 300px;">
+                    <img [src]="item.Images" alt="image" srcset="">
+                </div>
+                <div style="background-color: #D3D3D3; border-radius: 20px; height: 150px;width: 300px;">
+                    <img [src]="item.ListImagePath" alt="image" srcset="">
+                </div>
+            </div>
+            <div fxLayout="row" fxFlexAlign="center center" fxFlex="100%">
+                <b>{{'Collection:'}}</b>
+                <p>{{item.Collection}}</p>
+            </div>
+            <div fxLayout="row" fxFlexAlign="center center" fxFlex="100%">
+                <b>{{'Price:'}}</b>
+                <p>{{item.Price}}</p>
+            </div>
+            <div fxLayout="row" fxFlexAlign="center center" fxFlex="100%">
+                <b>{{'ProductTitle:'}}</b>
+                <p>{{item.ProductTitle}}</p>
+            </div>
+            <div fxLayout="row" fxFlexAlign="center center" fxFlex="100%">
+                <b>{{'StyleName:'}}</b>
+                <p>{{item.StyleName}}</p>
+            </div>
+            <div fxLayout="row" fxFlexAlign="center center" fxFlex="100%">
+                <b>{{'StyleNumber:'}}</b>
+                <p>{{item.StyleNumber}}</p>
+            </div>
+            <div fxLayout="row" fxFlexAlign="center center" fxFlex="100%">
+                <b>{{'NetQuantity:'}}</b>
+                <p>{{item.NetQuantity}}</p>
+            </div>
+            <div fxLayout="row" fxFlexAlign="center center" fxFlex="100%">
+                <b>{{'ProductCode:'}}</b>
+                <p>{{item.ProductCode}}</p>
+            </div>
+            <div fxLayout="row" fxFlexAlign="center center" fxFlex="100%">
+                <b>{{'AvailableSizes:'}}</b>
+                <p>{{item.AvailableSizes}}</p>
+            </div>
+        </div>
+    </div>
+    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center" style="padding: 20px;">
+        <div>
+            <h4>Basic mat-select</h4>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>Relevance</mat-label>
+            <mat-select [(ngModel)]="chosenRelevance" (selectionChange)="finaliseData()">
+                <mat-option *ngFor="let item of relevance" [value]="item">
+                    {{item}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-flat-button color="primary" routerLink="/feedback">Feedback</button>
+
+    </div>
+</div>

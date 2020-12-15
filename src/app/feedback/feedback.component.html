@@ -1,0 +1,25 @@
+<mat-card style="padding: 10%;">
+    <form [formGroup]="profileForm" style="margin: 5%;" (ngSubmit)="onSubmit()" fxLayout="column">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" type="text" formControlName="username" required>
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your Name</mat-label>
+            <input type="text" matInput formControlName="name">
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your Number</mat-label>
+            <input type="text" matInput formControlName="number">
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>please give feedback</mat-label>
+            <input type="text" matInput formControlName="feedback">
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+</mat-card>

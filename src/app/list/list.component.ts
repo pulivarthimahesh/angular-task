@@ -91,12 +91,25 @@ export class ListComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll(event) {
-    console.log(event);
+    
     if (event.target.offsetHeight + event.target.scrollTop >= (event.target.scrollHeight - 100)) {
       console.log('e')
 
       this.addMore();
     }
+    
+    
+//     let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
+// let max = document.documentElement.scrollHeight;
+// console.log(pos);
+// console.log(max);
+
+// // pos/max will give you the distance between scroll bottom and and bottom of screen in percentage.
+//  if(pos >= 9000)   {
+//  //Do your action here
+//  console.log("vgb");
+ 
+//  }
   }
 
 }

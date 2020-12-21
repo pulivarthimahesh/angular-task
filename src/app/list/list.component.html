@@ -50,7 +50,7 @@
         </div>
         <mat-form-field appearance="fill">
             <mat-label>Relevance</mat-label>
-            <mat-select [(ngModel)]="chosenRelevance" (selectionChange)="finaliseData()">
+            <mat-select [(ngModel)]="chosenRelevance" (selectionChange)="onChange()">
                 <mat-option *ngFor="let item of relevance" [value]="item">
                     {{item}}
                 </mat-option>

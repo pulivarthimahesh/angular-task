@@ -2,13 +2,12 @@
     <div class="example-container">
         <form [formGroup]="profileForm" style="margin: 5%" fxLayout="column" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="fill">
-                <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="pat@example.com" type="text" formControlName="username" required>
-                <input type="password" matInput formControlName="password">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="pat" type="text" formControlName="username" required>
                 <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Enter your password</mat-label>
+                <mat-label>Password</mat-label>
                 <input type="password" matInput formControlName="password">
                 <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
             </mat-form-field>

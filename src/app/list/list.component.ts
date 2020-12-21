@@ -67,16 +67,31 @@ export class ListComponent implements OnInit {
       temp.forEach(element => {
         this.data.push(element);
       });
+      // this.router.navigate(['/list'], { queryParams: { sortType: 'hightolow' } })
     } else {
       let temp = this.lowtohighData.slice(this.startIndex, this.endIndex);
       temp.forEach(element => {
         this.data.push(element);
       });
+      // this.router.navigate(['/list'], { queryParams: { sortType: 'lowtohigh' } })
     }
+  }
+
+  onChange() {
+    if (this.chosenRelevance == 'HighToLow') {
+      this.router.navigate(['/list'], { queryParams: { sortType: 'hightolow' } });
+      this.finaliseData();
+    } else {
+      this.router.navigate(['/list'], { queryParams: { sortType: 'lowtohigh' } });
+      this.finaliseData();
+    }
+
+
   }
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll(event) {
+    console.log(event);
     if (event.target.offsetHeight + event.target.scrollTop >= (event.target.scrollHeight - 100)) {
       console.log('e')
 

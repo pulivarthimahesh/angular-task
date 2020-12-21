@@ -11,16 +11,15 @@ export class LoginComponent implements OnInit {
 
   constructor(public router: Router) { }
   profileForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required,]),
+    username: new FormControl('', Validators.compose([Validators.maxLength(10), Validators.pattern('[a-zA-Z]*'), Validators.required])),
+    password: new FormControl('', Validators.compose([Validators.maxLength(10), Validators.pattern('[a-zA-Z]*'), Validators.required])),
   });
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log("cffvgbh");
-    this.router.navigate(['/list'])
+    this.router.navigate(['/list'], { queryParams: { sortType: 'hightolow' } })
   }
 
 }

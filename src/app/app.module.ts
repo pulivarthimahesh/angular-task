@@ -12,10 +12,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
+import { AlphabetOnlyDirective } from './alphabet-only.directive';
+import { NumbersOnlyDirective } from './numbers-only.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlphabetOnlyDirective,
+    NumbersOnlyDirective,
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
         <form [formGroup]="profileForm" style="margin: 5%" fxLayout="column" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="fill">
                 <mat-label>Username</mat-label>
-                <input matInput placeholder="pat" type="text" formControlName="username" required>
+                <input matInput placeholder="pat" type="text" AlphabetOnlyDirective="true" formControlName="username" required>
                 <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
             </mat-form-field>
             <mat-form-field appearance="fill">
@@ -11,7 +11,7 @@
                 <input type="password" matInput formControlName="password">
                 <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
             </mat-form-field>
-            <button mat-raised-button color="primary" type="submit">Login</button>
+            <button mat-raised-button color="primary" [disabled]="!profileForm.valid"type="submit">Login</button>
         </form>
     </div>
 </mat-card>

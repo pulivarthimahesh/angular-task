@@ -14,7 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { from } from 'rxjs';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent,],
   imports: [
     CommonModule,
     LoginRoutingModule,

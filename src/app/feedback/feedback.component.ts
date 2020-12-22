@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FeedbackComponent implements OnInit {
 
   profileForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.pattern('^.+@gmail.com$')]),
+    username: new FormControl('', [Validators.required, Validators.pattern('^.+@gmail.com$'),]),
     name: new FormControl('', Validators.compose([Validators.maxLength(10), Validators.pattern('[a-zA-Z]*'), Validators.required])),
     number: new FormControl('', [Validators.pattern('[6-9]\\d{9}'), Validators.required,]),
     feedback: new FormControl('', [Validators.required,]),
